@@ -1,2 +1,2 @@
-# GaussianSplattingWorkflow
+# Gaussian Splatting Workflow
 
