@@ -1,7 +1,7 @@
 # Gaussian Splatting Workflow
 
-## 01 Brief
-### Concept
+## 1 Brief
+### 1.1 Concept
 This is a very simplified explanation of the Gaussian Splatting concept
 - First, locate the camera position > Reconstruct the point cloud > Convert each point into a 3D ellipsoid > Adjust it using AI to achieve the sharpest and most accurate result
 - If the video has 300 frames, there are 300 photos taken from slightly different angles
@@ -11,7 +11,7 @@ This is a very simplified explanation of the Gaussian Splatting concept
 
 https://github.com/user-attachments/assets/5d395c7e-6818-4023-919a-0ce1722b0322
 
-### Render
+### 1.2 Render
 - During rendering, all 3D ellipsoids are read > projected onto the screen > and transformed into 2D ellipses on the screen
 - The ellipsoids are actually 3D, but because only the view seen by the camera is rendered in 2D, the size and orientation of the ellipsoids will slightly change depending on the camera position
 - The final color and transparency are mixed based on the view seen by the camera
@@ -20,7 +20,7 @@ https://github.com/user-attachments/assets/5d395c7e-6818-4023-919a-0ce1722b0322
 
 https://github.com/user-attachments/assets/2ffbe27c-db08-44a9-abb2-720cc779c5ff
 
-### Data Format
+### 1.3 Data Format
 - Opening the .py file directly with Notepad will show the data header:
 - Position: X, Y, Z. Position of the GS point
 - Color: dc_0, dc_1, dc_2. Color of the GS point
@@ -31,9 +31,9 @@ https://github.com/user-attachments/assets/2ffbe27c-db08-44a9-abb2-720cc779c5ff
 - Later, when discussing rendering, we will show how the data is read in different 3D software.
 <img width="828" height="1078" alt="Screenshot 2025-12-09 221231" src="https://github.com/user-attachments/assets/f06e8031-bcab-4f95-8112-e62291d18574" />
 
-## 02 Scanning
-### Scanning Machine
-### Scanning Path
+## 2 Scanning
+### 2.1 Scanning Machine
+### 2.2 Scanning Path
 - Cover as many viewing angles as possible during scanning
 - Scan at different heights. Get close to the object
 - Avoid overexposure in the video
