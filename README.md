@@ -7,6 +7,10 @@ This is a very simplified explanation of the Gaussian Splatting concept.
 - Render this set of 3D ellipsoids from different angles > Compare them with the original photos > Correct their size, color, position, and transparency, repeating this process continuously.
 - The 3D ellipsoid is not perfectly round; it is a 3D colored ellipsoid that can be rotated, stretched, and flattened. After the calculation, the shape and size of the ellipsoid are fixed.
 ![3dgs_pipeline_v3-1](https://github.com/user-attachments/assets/bb86f852-0b9a-4c3e-98b7-45d136839ad6)
+<p align="center" width="100%">
+<video src="[https://github.com/user-attachments/assets/563d36e5-1c92-49e6-aa88-c873a20ddf1d](https://github.com/user-attachments/assets/d420a54d-32e7-4729-ae35-a2b01f86f415
+)" width="80%" controls></video>
+</p>
 https://github.com/user-attachments/assets/d420a54d-32e7-4729-ae35-a2b01f86f415
 
 - During rendering, all 3D ellipsoids are read > projected onto the screen > and transformed into 2D ellipses on the screen.
