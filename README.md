@@ -84,3 +84,77 @@ https://github.com/user-attachments/assets/2ffbe27c-db08-44a9-abb2-720cc779c5ff
 <img width="1760" height="434" alt="Screenshot 2025-12-09 223237" src="https://github.com/user-attachments/assets/7cb6316b-345a-4f77-9181-8dc41eef3c88" />
 
 ## 4. Clean up
+### 4.1 Software
+- LCC Studio (not free)
+- SuperSplat (free and open source)
+- SuperSplat Web Version: https://superspl.at/editor
+- Local Version: https://github.com/playcanvas/supersplat
+<img width="1897" height="886" alt="0 (4)" src="https://github.com/user-attachments/assets/df9f04bd-a5ff-4bcb-b9ff-9817b4b51875" />
+
+### 4.2 Clean up
+- Most GS editing software is similar in operation. Taking Supersplat as an example
+- Common cleanup needs include: Deleting unnecessary points
+- Resetting the Pivot Point (the world center is the exported Pivot Point)
+- Data after export cleanup
+- Cleaning up GS points not visible from the viewpoint can improve rendering performance
+<img width="1911" height="875" alt="螢幕擷取畫面 2025-11-24 112948" src="https://github.com/user-attachments/assets/e8b5e232-9621-4730-8abf-2c50cfa8c3a8" />
+<img width="1010" height="1079" alt="Screenshot 2025-12-09 224256" src="https://github.com/user-attachments/assets/3cf644b9-2056-4e03-bb08-f423b0bb8c3d" />
+
+## 5. Render
+### 5.1 Software
+- As mentioned in the previous introduction, the specific file is a PLY file containing special information.
+- This information needs to be interpreted and presented within 3D software.
+- While the rendering processes of different software are largely similar, some functionalities may vary.
+- Blender: KIRI Engine (Geometry Node, extremely poor performance)
+<img width="1577" height="395" alt="Geo_Node" src="https://github.com/user-attachments/assets/21a84e28-8127-4f44-bbb5-32d1d72594aa" />
+
+https://github.com/user-attachments/assets/337bdbee-c5db-4c60-8831-46041287f699
+
+- Houdini 21 native support
+- The File node reads the PLY file directly, the Bake Splat node interprets it as GS, and Karma renders
+- The information of the points can be seen in the Geometry Spreadsheet
+<img width="1912" height="1024" alt="0 (5)" src="https://github.com/user-attachments/assets/66926a9c-b173-4d17-b1ef-82a7f49a8581" />
+
+- we usually use Volinga and Xgrids LCC for rendering in Unreal Engine
+- Volinga currently offers the best quality, but it requires payment (https://web.volinga.ai/)
+- Xgrids LCC (https://developer.xgrids.com/#/download?page=LCC_UNREAL_SDK_UE54)
+- LCC Viewer (Free) (https://xgrids.com/intl/support/download?page=LCCViewer)
+- Before using the LCC Plugin, you need to convert the PLY file to an LCC file. You can use LCC Viewer for free to convert files. Simply open the PLY file with LCC Viewer, and it will create the LCC file next to it.
+- In addition to the LCC file itself, the LCC file contains other files. These files need to be placed in the same folder. When moving to another project, move the entire package.
+<img width="1512" height="850" alt="LCC_Viewer" src="https://github.com/user-attachments/assets/52e9e555-56d1-4473-b811-e5e916970942" />
+
+- The following will demonstrate the specific operation of LCC:
+- Place the LCC plugin (https://developer.xgrids.com/#/download?page=LCC_UNREAL_SDK_UE54) in the Plugins folder of your UE project
+- Add an LCC Actor to your scene
+- The LCC actor directly reads the absolute path of the LCC file. It does not need to be imported into the UE project and can exist outside the project
+- You can adjust the color, curves, and splat size
+<img width="1914" height="1027" alt="LCC" src="https://github.com/user-attachments/assets/cc8b300c-d599-47b7-b9eb-db073f20b0f4" />
+
+- More detailed settings for LCC can be found in the official documentation (https://developer.xgrids.com/#/document?titleId=en-1720509312452)
+- Some APIs are available and can be called via BP or C++
+<img width="1224" height="878" alt="image (3)" src="https://github.com/user-attachments/assets/64780908-0618-4c94-9454-00bb1459ea42" />
+<img width="990" height="552" alt="GS_BPAPI" src="https://github.com/user-attachments/assets/db894488-c4cc-4f71-863a-6e36c039823a" />
+
+### 5.2 Lighting
+- Most GS plugins support lighting
+- Taking LCC as an example, simply change the Light Mode to Lit
+- Color grading and tone mapping are supported
+- Currently, using the UE LCC plugin, it's not possible to use GS as an HDRI
+- NVIDIA videos appear to have the potential for HDRI use
+- Path tracing is not supported
+- Checking "Receive Shadow" under LCC Actor allows GS to render object shadows (but noticeable uneven edges in the GS rendering are visible)
+
+https://github.com/user-attachments/assets/49b7a01f-1809-4ad7-bc58-a5f3f1b9e748
+
+https://github.com/user-attachments/assets/0b62ee56-7636-4074-8b43-9bccafab4f30
+
+<img width="1246" height="855" alt="GS_shadow" src="https://github.com/user-attachments/assets/f396a349-f84a-476d-94dd-638d475fd0b2" />
+
+
+### 5.3 Culling
+- You can use the Clipping Volume of the LCC Plugin for culling
+
+https://github.com/user-attachments/assets/89eb8555-b7b4-47d2-917a-b808debfd80e
+
+
+
