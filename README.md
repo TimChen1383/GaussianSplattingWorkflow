@@ -1,6 +1,6 @@
 # Gaussian Splatting Workflow
 
-## Brief
+## 01 Brief
 ### Concept
 This is a very simplified explanation of the Gaussian Splatting concept
 - First, locate the camera position > Reconstruct the point cloud > Convert each point into a 3D ellipsoid > Adjust it using AI to achieve the sharpest and most accurate result
@@ -31,7 +31,7 @@ https://github.com/user-attachments/assets/2ffbe27c-db08-44a9-abb2-720cc779c5ff
 - Later, when discussing rendering, we will show how the data is read in different 3D software.
 <img width="828" height="1078" alt="Screenshot 2025-12-09 221231" src="https://github.com/user-attachments/assets/f06e8031-bcab-4f95-8112-e62291d18574" />
 
-## Scanning
+## 02 Scanning
 ### Scanning Machine
 ### Scanning Path
 - Cover as many viewing angles as possible during scanning
