@@ -2,10 +2,10 @@
 
 ## Brief
 This is a very simplified explanation of the Gaussian Splatting concept. 
-  - First, locate the camera position > Reconstruct the point cloud > Convert each point into a 3D ellipsoid > Adjust it using AI to achieve the sharpest and most accurate result.
-  - If the video has 300 frames, there are 300 photos taken from slightly different angles.
-  - Render this set of 3D ellipsoids from different angles > Compare them with the original photos > Correct their size, color, position, and transparency, repeating this process continuously.
-  - The 3D ellipsoid is not perfectly round; it is a 3D colored ellipsoid that can be rotated, stretched, and flattened. After the calculation, the shape and size of the ellipsoid are fixed.
+- First, locate the camera position > Reconstruct the point cloud > Convert each point into a 3D ellipsoid > Adjust it using AI to achieve the sharpest and most accurate result.
+- If the video has 300 frames, there are 300 photos taken from slightly different angles.
+- Render this set of 3D ellipsoids from different angles > Compare them with the original photos > Correct their size, color, position, and transparency, repeating this process continuously.
+- The 3D ellipsoid is not perfectly round; it is a 3D colored ellipsoid that can be rotated, stretched, and flattened. After the calculation, the shape and size of the ellipsoid are fixed.
 ![3dgs_pipeline_v3-1](https://github.com/user-attachments/assets/bb86f852-0b9a-4c3e-98b7-45d136839ad6)
 https://github.com/user-attachments/assets/d420a54d-32e7-4729-ae35-a2b01f86f415
 
