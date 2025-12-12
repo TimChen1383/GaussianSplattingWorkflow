@@ -1,4 +1,4 @@
-# Gaussian Splatting Workflow
+# Gaussian Splatting Workflow (WIP)
 
 ## 1. Brief
 ### 1.1 Concept
